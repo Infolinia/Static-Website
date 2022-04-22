@@ -1,0 +1,37 @@
+body {
+  background: #eee;
+
+}
+
+.photo {
+  margin: 20px 0;
+  width: 250px;
+  background: white;
+  padding: 10px;
+ 
+  border-radius: 5px;
+  border: 1px solid silver;
+  box-sizing: border-box;
+  
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  transition: 0.7s all ease-in-out;
+  will-change: transform;
+  align-items: flex-start;
+}
+
+.photo img {
+  flex-basis: 100%;
+  width: 220px;
+}
+
+.photo figcaption {
+  margin-top: 10px;
+}
+
+.photo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}

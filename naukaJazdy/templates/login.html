@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+
+{% block body %}
+
+Logowanie
+<hr/>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+<div class="row">
+        <div class="mx-auto col-sm-8 col-md-4 pt-3 mb-4">
+            <div class="card">
+                <div class="card-header text-center text-muted">
+                    Formularz logowania
+                </div>
+                <div class="card-body bg-light">
+                    <form action="/accounts/auth/" method="post" class="form holizontal well">
+					{% csrf_token %}
+                        <div class="form-group">
+							<input class="form-control form-control-sm text-center rounded-0" placeholder="Login" type="text" name="username" value="" id="username">
+					    </div>
+					   
+					    <div class="form-group">
+							<input class="form-control form-control-sm text-center rounded-0" placeholder="Hasło" type="password" name="password" value="" id="password">
+					    </div>
+						
+
+                        <div class="form-group">
+                            <button class="btn btn-block btn-primary rounded-0 btn-sm" type="submit" id="_submit" name="_submit">Zaloguj</button>
+                        </div>
+
+                     
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
